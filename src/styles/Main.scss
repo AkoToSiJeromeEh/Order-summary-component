@@ -1,0 +1,221 @@
+@use "../abstract/colors.scss" as colors;
+@use "../abstract/fonts.scss" as fonts;
+@use "../abstract/buttons.scss" as buttons;
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.order--summary--section {
+  background-color: colors.$Paleblue;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(public/pattern-background-desktop.svg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order--summary--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  border-radius: 15px;
+  height: 100%;
+  background-color: colors.$white;
+  box-shadow: 2px 2px 5px colors.$Darkblue;
+}
+.order--img {
+  width: 100%;
+  overflow: hidden;
+  background-color: colors.$violet;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: contain;
+    object-position: center;
+    transition: all 1s ease-in-out;
+  }
+  img:hover{
+    transform: scale(1.3);
+    mix-blend-mode:luminosity;
+    cursor: pointer;
+  }
+}
+.order--contents {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.context--cont > h1 {
+  @include fonts.fontNweight(
+    900, 
+    fonts.$RedHat,
+    colors.$Darkblue, 
+    22px
+);
+  padding-bottom: 20px;
+}
+.context--cont {
+  width: 80%;
+  margin: auto;
+}
+
+.context--cont > p {
+  @include fonts.fontNweight(
+    500, 
+    fonts.$RedHat,
+    colors.$Desaturatedblue,
+    14px
+);
+  padding-bottom: 20px;
+
+  
+}
+.music--ico  {
+
+  .fa-compact-disc {
+    background-color: colors.$blacky;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    animation : anim-rotate 3s linear infinite;
+  }
+   
+  &:hover  {
+    cursor: pointer;
+    color: colors.$Desaturatedblue;
+  }
+
+}
+.plan--cont {
+  background-color: colors.$Vpaleblue;
+  display: flex;
+  padding: 15px;
+  gap: 13px;
+  align-items: center;
+  justify-content: start;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  text-align: start
+}
+.annual-plan {
+
+  @include fonts.fontNweight(
+    900, 
+    fonts.$RedHat, 
+    colors.$Darkblue,
+    12px
+ );
+
+  span {
+    @include fonts.fontNweight(
+      500,
+      fonts.$RedHat,
+      colors.$Desaturatedblue,
+      11px
+    );
+  }
+}
+.change-link {
+  margin-left: auto;
+  a {
+    text-decoration: none;
+    transition : all 1s ease-in-out;
+    @include fonts.fontNweight(
+        600, 
+        fonts.$RedHat, 
+        colors.$Brightblue, 
+        13px
+    );
+  }
+  a:hover{
+    color: colors.$Desaturatedblue;
+  }
+ 
+}
+.btn-container{
+    padding-block: 20px;
+    width: 90%;
+    margin: auto;
+
+    .btn-payment {
+        display: block;
+        margin-bottom: 20px;
+        padding: 12px;
+        transition: all 1s ease-in-out;
+        @include buttons.OrderButton(
+            colors.$Brightblue,
+            colors.$white,
+            100%,
+            fonts.$RedHat, 
+            900, 
+            2px 2px 5px colors.$Darkblue,
+            pointer,
+            none,
+            10px
+        )
+    }
+    .btn-payment:hover{
+      background-color : colors.$violet2;
+    }
+    
+    .btn-cancel{
+        display: block;
+        margin: auto;
+        font-size: 12px;
+        transition: all 0.5s ease-in-out;
+        @include buttons.OrderButton(
+            transparent,
+            colors.$Desaturatedblue,
+            100%,
+            fonts.$RedHat, 
+            600, 
+            none,
+            pointer,
+            none,
+            0px
+
+        )
+    }
+    .btn-cancel:hover{
+        color: colors.$Darkblue;
+    }
+
+    
+}
+@keyframes anim-rotate {
+   
+  0%{
+      transform: rotate(0deg);
+  }
+  50%{
+      color: colors.$violet2; 
+  }
+  100%{
+      transform: rotate(360deg);
+      color: colors.$Brightblue;
+  }
+   
+}

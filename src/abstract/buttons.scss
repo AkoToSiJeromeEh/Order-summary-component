@@ -1,0 +1,21 @@
+@mixin OrderButton(
+  $bgColor,
+  $textColor,
+  $width,
+  $fonts,
+  $fontWeight,
+  $shadow,
+  $cursor,
+  $border,
+  $radius
+) {
+  background-color: $bgColor;
+  color: $textColor;
+  width: $width;
+  font-family: $fonts;
+  font-weight: $fontWeight;
+  box-shadow: $shadow;
+  cursor: $cursor;
+  border: $border;
+  border-radius: $radius;
+}

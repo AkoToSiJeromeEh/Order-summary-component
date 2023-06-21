@@ -1,0 +1,8 @@
+$RedHat : 'Red Hat Display', sans-serif;
+
+@mixin fontNweight($weight,$fonts,$color,$font-size){
+    font-family: $fonts;
+    font-weight: $weight;
+    color: $color;
+    font-size: $font-size;
+}
